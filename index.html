@@ -2,51 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dark India Studios</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark India Studios — Home</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <!-- Header -->
   <header class="nav">
-    <div class="container">
-      <div class="logo">KK</div>
-      <nav>
-        <a href="index.html" class="active">Home</a>
+    <div class="container nav-row">
+      <a class="logo" href="index.html">KK</a>
+      <nav class="menu" id="menu">
+        <a class="active" href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <button class="hamb" id="hamb" aria-label="Open Menu">☰</button>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero container">
+  <!-- Hero -->
+  <section class="hero container reveal">
     <div class="hero-text">
-      <h1>Hi, I'm <span class="highlight">Krish Kumar</span></h1>
-      <p class="lead">Main ek passionate Video Editor & Graphics Designer hoon, 4+ years ka experience ke saath viral content banata hoon brands, influencers aur creators ke liye.</p>
-      <div class="hero-actions">
-        <a href="projects.html" class="btn primary">▶ Play Showreel</a>
-        <a href="mailto:ikrishworks@gmail.com" class="btn">✉ Hire Me</a>
+      <span class="eyebrow">Dark India Studios</span>
+      <h1>Hi, I’m <span class="grad-text">Krish Kumar</span></h1>
+      <p class="lead">
+        Main ek Video Editor & Graphics Designer hoon — 4+ saal se brands,
+        creators aur startups ke liye <strong>high-impact</strong> content deliver karta hoon.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="projects.html">▶ Play Showreel</a>
+        <a class="btn" href="mailto:ikrishworks@gmail.com">✉ Hire Me</a>
       </div>
+      <ul class="badges">
+        <li>Premiere Pro</li><li>After Effects</li><li>DaVinci Resolve</li><li>Photoshop</li>
+      </ul>
     </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1600&auto=format&fit=crop" alt="Editing Setup" />
+    <div class="hero-media">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1600&auto=format&fit=crop" alt="Editing setup"/>
+        <span class="glow"></span>
+      </div>
     </div>
   </section>
 
+  <!-- Mini Highlights -->
+  <section class="container grid-3 reveal">
+    <article class="card mini">
+      <h3>⚡ Speed</h3>
+      <p>Fast turnarounds with clean storytelling.</p>
+    </article>
+    <article class="card mini">
+      <h3>🎨 Design</h3>
+      <p>On-brand motion titles & graphics.</p>
+    </article>
+    <article class="card mini">
+      <h3>🎧 Audio</h3>
+      <p>Polished sound design & mixing.</p>
+    </article>
+  </section>
+
   <!-- Footer -->
-  <footer>
-    <div class="container foot">
-      <div class="logo">KK</div>
-      <div class="social">
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
+  <footer class="footer">
+    <div class="container foot-row">
+      <div class="foot-left"><span class="logo">KK</span> Dark India Studios</div>
+      <div class="foot-mid">
+        <a href="https://www.instagram.com/darkindiax/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@DarkIndiax/" target="_blank" rel="noopener">YouTube</a>
         <a href="mailto:ikrishworks@gmail.com">Email</a>
       </div>
-      <div>© <span id="year"></span> All rights reserved.</div>
+      <div class="foot-right">© <span id="year"></span> All rights reserved.</div>
     </div>
   </footer>
 
