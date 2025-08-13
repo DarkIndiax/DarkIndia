@@ -140,29 +140,42 @@
 <body>
   <!-- ===== Header / Nav ===== -->
   <header>
-    <div class="container nav">
-      <a href="#home" class="logo" aria-label="Home">
-        <span class="logo-badge"><span>KK</span></span>
-        <span>Krish <span style="color:#9aa2b2">Kumar</span></span>
-      </a>
-      <nav class="menu" aria-label="Primary">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#work">Projects</a>
-        <a href="#contact">Contact</a>
-        <a class="cta" href="#work">▶︎ Watch Showreel</a>
-      </nav>
-      <button class="hamb" id="hamb" aria-label="Open menu">☰</button>
-    </div>
-    <div class="container mobile" id="mobileMenu" aria-label="Mobile menu">
-      <a href="#home">Home</a>
+  <style>
+    .container.mobile {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .container.mobile {
+        display: block;
+      }
+    }
+  </style>
+
+  <div class="container nav">
+    <a href="#home" class="logo" aria-label="Home">
+      <span class="logo-badge"><span>KK</span></span>
+      <span>Krish <span style="color:#9aa2b2">Kumar</span></span>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#work">Projects</a>
       <a href="#contact">Contact</a>
-    </div>
-  </header>
+      <a class="cta" href="#work">▶︎ Watch Showreel</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="Open menu">☰</button>
+  </div>
+
+  <div class="container mobile" id="mobileMenu" aria-label="Mobile menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
 
   <!-- ===== Hero ===== -->
   <section id="home" class="hero container">
