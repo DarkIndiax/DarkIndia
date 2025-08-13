@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dark India Studios</title>
+  <meta name="description" content="Modern, responsive portfolio for a video editor: showreel, services, projects, and contact form." />
+  <meta property="og:title" content="Krish Kumar — Video Editor Portfolio" />
+  <meta property="og:description" content="Portfolio for a video editor: showreel, services, projects, and contact form." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f1020" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo" aria-label="Home">
+      <span class="logo-badge"><span>KK</span></span>
+      <span>Krish <span style="color:#9aa2b2">Kumar</span></span>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a class="cta" href="projects.html">▶︎ Watch Showreel</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="Open menu">☰</button>
+  </div>
+  <div class="container mobile" id="mobileMenu" aria-label="Mobile menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<section class="section container">
+  <h2>Let’s work together</h2>
+  <p class="sub">This form is Netlify‑ready — enable Forms in your site settings to receive submissions.</p>
+  <form name="contact" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="contact" />
+    <label class="full">Your Name<br><input name="name" required /></label>
+    <label class="full">Email<br><input type="email" name="email" required /></label>
+    <label class="full">Project details<br><textarea name="message" placeholder="Tell me about your video…"></textarea></label>
+    <p class="full"><button class="btn primary" type="submit">Send message</button></p>
+  </form>
+</section>
+
+<footer>
+  <div class="container foot">
+    <div class="logo"><span class="logo-badge"><span>KK</span></span> Krish Kumar</div>
+    <div class="social">
+      <a href="https://www.instagram.com/darkindiax/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@DarkIndiax/" target="_blank" rel="noopener">YouTube</a>
+      <a href="mailto:ikrishworks@gmail.com">Email</a>
+    </div>
+    <div>© <span id="year"></span> All rights reserved.</div>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
