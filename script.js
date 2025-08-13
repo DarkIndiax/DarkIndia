@@ -1,13 +1,12 @@
 // Current Year
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Scroll animation (optional)
-const revealElements = document.querySelectorAll('.hero-text, .hero-image');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const hero = document.querySelector(".hero");
+  hero.style.opacity = "0";
+  hero.style.transform = "translateY(20px)";
+  
+  setTimeout(() => {
+    hero.style.transition = "all 0.8s ease";
+    hero.style.opacity = "1";
+    hero.style.transform = "translateY(0)";
+  }, 200);
 });
-revealElements.forEach(el => observer.observe(el));
