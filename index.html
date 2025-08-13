@@ -14,10 +14,8 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111111; /* Solid dark grey */
       color: #ffffff;
-      background: 
-        radial-gradient(circle at center, rgba(106, 13, 173, 0.6), rgba(0, 4, 255, 0.5), rgba(255, 20, 147, 0.4)),
-        #111111; /* Dark grey base */
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -29,11 +27,11 @@
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     h1 span {
-      color: #ff1493;
+      color: #ff1493; /* Optional: highlight word */
     }
 
     p {
@@ -44,18 +42,8 @@
     }
 
     footer {
-      margin-top: 3rem;
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    body > * {
-      animation: fadeInUp 1s ease-out both;
+      color: rgba(255, 255, 255, 0.5);
     }
   </style>
 </head>
