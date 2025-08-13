@@ -139,14 +139,17 @@
 </head>
 <body>
   <!-- ===== Header / Nav ===== -->
-  <header>
+ <header>
   <style>
     .container.mobile {
       display: none;
     }
     @media (max-width: 768px) {
       .container.mobile {
-        display: block;
+        display: none; /* hidden by default */
+      }
+      .container.mobile.show {
+        display: block; /* visible only when 'show' class is added */
       }
     }
   </style>
@@ -174,8 +177,13 @@
     <a href="#work">Projects</a>
     <a href="#contact">Contact</a>
   </div>
-</header>
 
+  <script>
+    document.getElementById('hamb').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('show');
+    });
+  </script>
+</header>
 
   <!-- ===== Hero ===== -->
   <section id="home" class="hero container">
