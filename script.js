@@ -1,10 +1,13 @@
+// Current Year
+document.getElementById("year").textContent = new Date().getFullYear();
 
-// Mobile menu toggle
-const hamb = document.getElementById('hamb');
-const mobile = document.getElementById('mobileMenu');
-hamb?.addEventListener('click', ()=>{
-  mobile.classList.toggle('show');
+// Scroll animation (optional)
+const revealElements = document.querySelectorAll('.hero-text, .hero-image');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
 });
-
-// Set current year
-document.getElementById('year').textContent = new Date().getFullYear();
+revealElements.forEach(el => observer.observe(el));
