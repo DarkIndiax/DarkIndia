@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0a0f1f;
+  color: white;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(20, 20, 35, 0.95);
+}
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  background: linear-gradient(to right, #00f, #0ff, #f0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+}
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(10, 10, 20, 0.9);
+  margin-top: 50px;
+}
+.footer-links a,
+.social-links a {
+  color: #0ff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+form input, form textarea, form button {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+form button {
+  background: #0ff;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+@media(max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: rgba(20, 20, 35, 0.95);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 10px;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
