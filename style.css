@@ -68,7 +68,10 @@ nav ul li a:hover {
   align-items: center;
   text-align: center;
   background: linear-gradient(rgba(10,15,31,0.85), rgba(10,15,31,0.85)),
-              url('../images/sample1.jpg') center/cover no-repeat;
+              url('../images/sample1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
 }
 
@@ -100,11 +103,12 @@ section {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
 }
 
 /* Forms */
@@ -120,11 +124,17 @@ form input, form textarea, form button {
   padding: 12px;
   border: none;
   border-radius: 6px;
+  outline: none;
 }
 
 form input, form textarea {
   background: rgba(255,255,255,0.1);
   color: white;
+}
+
+form input::placeholder, 
+form textarea::placeholder {
+  color: #bbb;
 }
 
 form button {
@@ -171,6 +181,7 @@ footer {
     width: 200px;
     padding: 15px;
     border-radius: 8px;
+    transition: all 0.3s ease;
   }
 
   nav ul.active {
