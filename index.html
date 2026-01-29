@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dark India Studios – Video Editing Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dark India Studios</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --bg: #07080d;
-  --glass: rgba(255,255,255,0.08);
-  --border: rgba(255,255,255,0.15);
+  --glass: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
   --text: #ffffff;
   --muted: #a1a1aa;
   --accent: #ff3b3b;
-  --neon: 0 0 25px rgba(255,59,59,0.6);
-  --radius: 22px;
+  --radius: 20px;
 }
 
 * {
@@ -31,49 +30,60 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at top, #13152a, #05060a);
+  background: radial-gradient(circle at top, #11132a, #05060a);
   color: var(--text);
   overflow-x: hidden;
 }
 
-/* ===== UTIL ===== */
+/* ---------- COMMON ---------- */
 section {
-  padding: 120px 8%;
+  padding: 110px 8%;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .btn {
   padding: 12px 26px;
   border-radius: 999px;
   font-weight: 600;
-  background: linear-gradient(135deg, #ff3b3b, #ff6a6a);
-  box-shadow: var(--neon);
-  transition: 0.3s;
+  font-size: 14px;
+  background: linear-gradient(135deg, #ff3b3b, #ff6464);
+  color: #fff;
+  transition: all 0.35s ease;
 }
 
 .btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 0 40px rgba(255,59,59,0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255,59,59,0.35);
 }
 
-.glass {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
+.btn-outline {
+  background: transparent;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  color: var(--muted);
 }
 
-/* ===== NAV ===== */
+.btn-outline:hover {
+  color: white;
+  border-color: var(--accent);
+}
+
+/* ---------- NAV ---------- */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 8%;
+  padding: 22px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(5,6,10,0.65);
-  backdrop-filter: blur(20px);
+  background: rgba(6,7,12,0.6);
+  backdrop-filter: blur(14px);
   z-index: 1000;
 }
 
@@ -82,7 +92,7 @@ nav h1 {
   font-weight: 800;
 }
 
-nav h1 span {
+nav span {
   color: var(--accent);
 }
 
@@ -92,26 +102,26 @@ nav ul {
   list-style: none;
 }
 
-nav ul li a {
-  color: var(--muted);
+nav a {
   font-size: 14px;
+  color: var(--muted);
 }
 
-nav ul li a:hover {
+nav a:hover {
   color: white;
 }
 
-/* ===== HERO ===== */
+/* ---------- HERO ---------- */
 .hero {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
   align-items: center;
 }
 
 .hero h2 {
-  font-size: 56px;
+  font-size: 52px;
   line-height: 1.05;
 }
 
@@ -121,116 +131,108 @@ nav ul li a:hover {
 
 .hero p {
   color: var(--muted);
-  margin: 25px 0;
-  max-width: 500px;
+  max-width: 480px;
+  margin: 24px 0 32px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 15px;
+  gap: 14px;
 }
 
-.hero .glass {
-  padding: 40px;
-  animation: float 6s ease-in-out infinite;
+.editor-box {
+  padding: 36px;
 }
 
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* ===== TITLES ===== */
+/* ---------- TITLES ---------- */
 .section-title {
-  font-size: 38px;
-  margin-bottom: 50px;
+  font-size: 36px;
+  margin-bottom: 55px;
 }
 
-/* ===== SERVICES ===== */
+/* ---------- SERVICES ---------- */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
+  gap: 26px;
 }
 
 .card {
-  padding: 30px;
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-  backdrop-filter: blur(25px);
-  border: 1px solid var(--border);
-  transition: 0.4s;
+  padding: 32px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 0 35px rgba(255,59,59,0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.5);
 }
 
 .card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  font-size: 18px;
 }
 
 .card p {
-  color: var(--muted);
   font-size: 14px;
+  color: var(--muted);
 }
 
-/* ===== SHOWREEL ===== */
+/* ---------- SHOWREEL ---------- */
 .showreel {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 50px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
   align-items: center;
 }
 
 .video {
-  padding: 70px;
+  padding: 80px;
   text-align: center;
   cursor: pointer;
-  transition: 0.4s;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
 
 .video:hover {
-  box-shadow: var(--neon);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 .play {
-  font-size: 60px;
+  font-size: 58px;
   color: var(--accent);
 }
 
-/* ===== TESTIMONIAL ===== */
+/* ---------- TESTIMONIAL ---------- */
 .testimonial {
-  text-align: center;
   padding: 70px;
+  text-align: center;
 }
 
 .testimonial p {
   font-size: 22px;
-  max-width: 700px;
+  max-width: 720px;
   margin: auto;
 }
 
 .testimonial strong {
   display: block;
-  margin-top: 20px;
+  margin-top: 18px;
   color: var(--muted);
 }
 
-/* ===== CONTACT ===== */
+/* ---------- CONTACT ---------- */
 form {
-  max-width: 600px;
+  max-width: 620px;
   margin: auto;
   display: grid;
-  gap: 15px;
+  gap: 14px;
 }
 
 input, textarea {
   padding: 15px;
   border-radius: 14px;
-  background: rgba(255,255,255,0.06);
   border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
   color: white;
 }
 
@@ -239,18 +241,19 @@ textarea {
   height: 120px;
 }
 
+/* ---------- FOOTER ---------- */
 footer {
-  text-align: center;
   padding: 40px;
+  text-align: center;
   font-size: 13px;
   color: var(--muted);
 }
 
-/* ===== ANIMATIONS ===== */
+/* ---------- ANIMATION (CLEAN) ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .reveal.active {
@@ -258,8 +261,8 @@ footer {
   transform: translateY(0);
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width: 900px) {
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
   .hero, .showreel {
     grid-template-columns: 1fr;
   }
@@ -283,84 +286,80 @@ footer {
   <a href="#contact" class="btn">Let’s Talk</a>
 </nav>
 
-<!-- HERO -->
 <section id="home" class="hero">
   <div class="reveal">
     <h2>Elevate Your<br><span>Video Content</span></h2>
-    <p>Dark India Studios transforms raw footage into cinematic, high-impact visuals.</p>
+    <p>
+      Dark India Studios crafts cinematic edits that feel premium,
+      clean, and story-driven.
+    </p>
     <div class="hero-buttons">
       <a href="#showreel" class="btn">Watch Showreel</a>
-      <a href="#contact" class="glass btn">Get Quote</a>
+      <a href="#contact" class="btn btn-outline">Get Quote</a>
     </div>
   </div>
 
-  <div class="glass reveal">
-    <h3>Live Editing Timeline</h3>
+  <div class="glass editor-box reveal">
+    <h3>Editing Process</h3>
     <p class="muted">Cuts • Color • Motion • Sound</p>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <h2 class="section-title reveal">Our Services</h2>
   <div class="services">
-    <div class="card reveal"><h3>Cinematic Editing</h3><p>Premium storytelling edits.</p></div>
-    <div class="card reveal"><h3>Color Grading</h3><p>Industry-level visual tones.</p></div>
-    <div class="card reveal"><h3>Motion Graphics</h3><p>High-energy motion visuals.</p></div>
-    <div class="card reveal"><h3>Sound Design</h3><p>Clean and powerful audio.</p></div>
+    <div class="glass card reveal"><h3>Cinematic Editing</h3><p>Story-driven professional edits.</p></div>
+    <div class="glass card reveal"><h3>Color Grading</h3><p>Film-like tones and consistency.</p></div>
+    <div class="glass card reveal"><h3>Motion Graphics</h3><p>Clean, modern visual motion.</p></div>
+    <div class="glass card reveal"><h3>Sound Design</h3><p>Clear, punchy audio experience.</p></div>
   </div>
 </section>
 
-<!-- SHOWREEL -->
 <section id="showreel">
   <div class="showreel">
     <div class="reveal">
       <h2 class="section-title">Showreel</h2>
-      <p class="muted">A glimpse into our cinematic edits.</p>
+      <p class="muted">A selection of our recent cinematic work.</p>
     </div>
-    <div class="video glass reveal">
+    <div class="glass video reveal">
       <div class="play">▶</div>
-      <p class="muted">Click to play showreel</p>
+      <p class="muted">Click to play video</p>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
 <section>
-  <div class="testimonial glass reveal">
-    <p>“Dark India Studios took our content to a whole new level.”</p>
+  <div class="glass testimonial reveal">
+    <p>
+      “Dark India Studios understands storytelling.
+      The edits feel premium and intentional.”
+    </p>
     <strong>— Rahul Verma</strong>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2 class="section-title reveal">Let’s Work Together</h2>
   <form class="reveal">
-    <input type="text" placeholder="Your Name" required>
+    <input placeholder="Your Name" required>
     <input type="email" placeholder="Email Address" required>
     <textarea placeholder="Tell us about your project"></textarea>
     <button class="btn">Send Message</button>
   </form>
 </section>
 
-<footer>
-  © 2026 Dark India Studios
-</footer>
+<footer>© 2026 Dark India Studios</footer>
 
 <script>
-// SCROLL REVEAL
-const reveals = document.querySelectorAll(".reveal");
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
+    if(entry.isIntersecting){
       entry.target.classList.add("active");
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.18 });
 
-reveals.forEach(r => observer.observe(r));
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 </script>
 
 </body>
