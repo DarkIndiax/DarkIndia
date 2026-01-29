@@ -15,22 +15,89 @@
   <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
- <style>
+<style>
 :root{
---bg-dark:#080706;
---glass:rgba(255,255,255,.06);
---border:rgba(255,255,255,.12);
---primary:#c2a26a;
---text-muted:rgba(255,255,255,.7)
+  --bg-dark:#080706;
+  --glass:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.12);
+  --primary:#c2a26a;
+  --text-muted:rgba(255,255,255,.7);
+  --red:#a81f1f;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
-font-family:Inter,sans-serif;
-background:var(--bg-dark);
-color:#fff;
-line-height:1.6
+  font-family:Inter,sans-serif;
+  background:var(--bg-dark);
+  color:#fff;
+  line-height:1.6;
 }
+
 a{text-decoration:none;color:inherit}
+
+/* ===== NAVBAR ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  background:rgba(8,7,6,.8);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* ===== DARK INDIA STUDIOS BRAND ===== */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-name{
+  font-size:20px;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:.5px;
+}
+
+.brand-x{
+  color:var(--red);
+  font-style:italic;
+  margin:0 2px;
+}
+
+.brand-studios{
+  font-size:12px;
+  font-weight:600;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:8px;
+  background:rgba(194,162,106,.18);
+  border:1px solid rgba(194,162,106,.45);
+  backdrop-filter:blur(12px);
+  letter-spacing:1px;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links a{
+  margin-left:24px;
+  font-size:14px;
+  opacity:.8;
+}
+
+.nav-links a:hover{opacity:1}
+</style>
+
 
 
     /* ---------- NAVBAR ---------- */
