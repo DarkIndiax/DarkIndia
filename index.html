@@ -2,31 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dark India Studios | Video Editor Portfolio</title>
+<title>Dark X India | Video Editing Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-/* ================= THEME ================= */
+/* ================= THEME (NEW PALETTE) ================= */
 :root{
-  --bg:#070707;
-  --panel:#0e0e0e;
+  --bg:#050507;
+  --panel:#0b0b10;
   --glass:rgba(255,255,255,0.08);
-  --border:rgba(255,255,255,0.14);
-  --primary:#c2a26a;
+  --border:rgba(255,255,255,0.15);
+
+  /* PURPLE → PINK GRADIENT */
+  --grad:linear-gradient(135deg,#7c3aed,#ec4899);
+  --purple:#7c3aed;
+  --pink:#ec4899;
+
   --text-muted:rgba(255,255,255,0.65);
-  --red:#a81f1f;
+  --red:#ef4444;
 }
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   font-family:'Inter',sans-serif;
-  background:radial-gradient(circle at top,#111,#070707 60%);
+  background:radial-gradient(circle at top,#0f0f1a,#050507 55%);
   color:#fff;
   line-height:1.6;
 }
-a{color:inherit;text-decoration:none}
+a{text-decoration:none;color:inherit}
 
 /* ================= NAV ================= */
 header{
@@ -34,8 +40,8 @@ header{
   top:0;
   width:100%;
   z-index:100;
-  background:rgba(7,7,7,.85);
-  backdrop-filter:blur(16px);
+  background:rgba(5,5,7,0.8);
+  backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
 }
 .nav{
@@ -46,20 +52,30 @@ header{
   align-items:center;
   justify-content:space-between;
 }
+
+/* Logo */
 .logo strong{font-weight:800}
 .logo .x{color:var(--red);font-style:italic;font-weight:400}
+
+/* Nav pill */
 .nav-pill{
   background:var(--glass);
   border:1px solid var(--border);
-  backdrop-filter:blur(14px);
-  padding:10px 22px;
+  backdrop-filter:blur(16px);
+  padding:10px 24px;
   border-radius:40px;
 }
-.nav-pill a{margin:0 12px;font-size:14px;opacity:.85}
+.nav-pill a{
+  margin:0 12px;
+  font-size:14px;
+  opacity:.85;
+}
 .nav-pill a:hover{opacity:1}
+
+/* CTA */
 .cta{
-  background:linear-gradient(135deg,var(--primary),#e6d3a3);
-  color:#000;
+  background:var(--grad);
+  color:#fff;
   padding:10px 18px;
   border-radius:999px;
   font-size:14px;
@@ -82,13 +98,15 @@ section{padding:130px 20px}
   gap:60px;
 }
 .badge{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
   padding:6px 14px;
   border-radius:999px;
   background:var(--glass);
   border:1px solid var(--border);
   font-size:12px;
-  color:var(--primary);
+  color:var(--purple);
   margin-bottom:20px;
 }
 h1{
@@ -97,17 +115,21 @@ h1{
   line-height:1.1;
 }
 .highlight{
-  background:linear-gradient(135deg,var(--primary),#e6d3a3);
-  color:#000;
-  padding:4px 10px;
-  border-radius:10px;
+  background:var(--grad);
+  padding:6px 14px;
+  border-radius:12px;
+  display:inline-block;
 }
 p.lead{
   margin-top:20px;
   max-width:520px;
   color:var(--text-muted);
 }
-.actions{margin-top:30px;display:flex;gap:16px}
+.actions{
+  margin-top:30px;
+  display:flex;
+  gap:16px;
+}
 .btn{
   padding:14px 22px;
   border-radius:14px;
@@ -118,14 +140,13 @@ p.lead{
   backdrop-filter:blur(14px);
 }
 .btn.primary{
-  background:linear-gradient(135deg,var(--primary),#e6d3a3);
-  color:#000;
+  background:var(--grad);
   border:none;
 }
 
 /* ================= IMAGE PANEL ================= */
 .image-panel{
-  background:linear-gradient(135deg,#1a1a1a,#0c0c0c);
+  background:linear-gradient(135deg,#141428,#0a0a14);
   border:1px solid var(--border);
   border-radius:28px;
   padding:14px;
@@ -145,7 +166,7 @@ p.lead{
 .image-box{
   height:460px;
   border-radius:20px;
-  background:#222;
+  background:#101018;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -177,7 +198,7 @@ h2{
   backdrop-filter:blur(14px);
 }
 
-/* ================= CATALOG / PORTFOLIO ================= */
+/* ================= VIDEO CATALOG ================= */
 .video-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -191,9 +212,9 @@ h2{
 }
 .video-thumb{
   height:180px;
-  background:#111;
+  background:#0e0e1a;
 }
-/* 👉 PUT VIDEO THUMBNAIL IMAGE */
+/* 👉 PUT VIDEO THUMB IMAGE */
 .video-thumb{
   background-image:url("VIDEO_THUMB_URL");
   background-size:cover;
@@ -206,7 +227,9 @@ h2{
   display:inline-block;
   margin-top:10px;
   font-size:14px;
-  color:var(--primary);
+  background:var(--grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 /* ================= CONTACT ================= */
@@ -222,8 +245,13 @@ form input,form textarea{
   padding:14px;
   color:#fff;
 }
-form textarea{grid-column:1/-1;height:120px}
-form button{grid-column:1/-1}
+form textarea{
+  grid-column:1/-1;
+  height:120px;
+}
+form button{
+  grid-column:1/-1;
+}
 
 /* ================= FOOTER ================= */
 footer{
@@ -272,12 +300,12 @@ footer{
         Brand-level execution.
       </h1>
       <p class="lead">
-        Dark X India is a professional video editing studio helping brands,
-        creators and businesses tell cinematic stories.
+        Dark X India is a professional video editing studio helping creators,
+        startups and brands grow with cinematic content.
       </p>
       <div class="actions">
         <a href="#work" class="btn primary">View Work</a>
-        <a href="#contact" class="btn">Get in Touch</a>
+        <a href="#contact" class="btn">Contact Me</a>
       </div>
     </div>
 
@@ -293,9 +321,9 @@ footer{
   <div class="container">
     <h2>What I Offer</h2>
     <div class="grid">
-      <div class="card">🎬 Long-form & Short-form Video Editing</div>
-      <div class="card">🎨 Color Grading & Cinematic Look</div>
-      <div class="card">⚡ Reels, Ads & YouTube Content</div>
+      <div class="card">🎬 Long & Short Form Editing</div>
+      <div class="card">🎨 Cinematic Color Grading</div>
+      <div class="card">⚡ Reels, Ads & YouTube</div>
       <div class="card">✨ Motion Graphics & Sound Design</div>
     </div>
   </div>
@@ -305,20 +333,17 @@ footer{
 <section id="work">
   <div class="container">
     <h2>Video Catalog</h2>
-
     <div class="video-grid">
 
-      <!-- VIDEO ITEM -->
       <div class="video-card">
         <div class="video-thumb"></div>
         <div class="video-info">
-          <strong>Brand Promo Video</strong>
-          <!-- 👉 ADD YOUR VIDEO LINK -->
+          <strong>Brand Promo Video</strong><br>
           <a href="YOUR_VIDEO_LINK" target="_blank">Watch Video ↗</a>
         </div>
       </div>
 
-      <!-- DUPLICATE ABOVE BLOCK FOR MORE VIDEOS -->
+      <!-- DUPLICATE FOR MORE VIDEOS -->
 
     </div>
   </div>
