@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dark India Studios | Video Editing Portfolio</title>
+<title>Dark X India | Video Editing Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Font -->
@@ -29,14 +29,11 @@
 body{
   font-family:'Inter',sans-serif;
   background:var(--bg-dark);
-  color:#ffffff;
+  color:#fff;
   line-height:1.6;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
+a{color:inherit;text-decoration:none}
 
 /* ================= NAVBAR ================= */
 header{
@@ -45,7 +42,7 @@ header{
   width:100%;
   z-index:100;
   background:rgba(8,7,6,0.85);
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);
 }
 
@@ -54,90 +51,106 @@ header{
   margin:auto;
   padding:16px 20px;
   display:flex;
+  align-items:center;
   justify-content:space-between;
-  align-items:center;
 }
 
-/* Brand */
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.brand-name{
+/* Logo */
+.logo{
   font-size:20px;
-  font-weight:800;
-  color:var(--primary);
 }
 
-.brand-x{
+.logo strong{
+  font-weight:800;
+}
+
+.logo .x{
   color:var(--red);
   font-style:italic;
-  margin:0 2px;
+  font-weight:400;
 }
 
-.brand-studios{
-  font-size:12px;
-  font-weight:600;
-  color:#fff;
-  padding:6px 14px;
-  border-radius:8px;
-  background:rgba(194,162,106,0.18);
-  border:1px solid rgba(194,162,106,0.45);
-  backdrop-filter:blur(10px);
-  letter-spacing:1px;
+/* Nav pill */
+.nav-center{
+  background:var(--glass);
+  border:1px solid var(--border);
+  backdrop-filter:blur(14px);
+  padding:10px 22px;
+  border-radius:40px;
 }
 
-/* Nav links */
-.nav-links a{
-  margin-left:24px;
+.nav-center a{
+  margin:0 12px;
   font-size:14px;
-  opacity:0.8;
+  opacity:0.85;
 }
 
-.nav-links a:hover{
-  opacity:1;
+.nav-center a:hover{opacity:1}
+
+/* CTA */
+.cta{
+  background:linear-gradient(135deg,var(--primary),#e6d3a3);
+  color:#000;
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
 }
 
 /* ================= HERO ================= */
 .hero{
   min-height:100vh;
-  padding-top:90px;
+  padding-top:110px;
   display:flex;
   align-items:center;
-  background:
-    linear-gradient(to bottom,rgba(0,0,0,0.7),var(--bg-dark)),
-    url("https://images.unsplash.com/photo-1545235617-9465d2a55698") center/cover;
 }
 
-.hero-content{
+.hero-inner{
   max-width:1200px;
   margin:auto;
   padding:40px 20px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
+}
+
+/* Left content */
+.tag{
+  display:inline-block;
+  padding:6px 14px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:20px;
+  font-size:12px;
+  color:var(--primary);
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:clamp(38px,5vw,58px);
+  font-size:clamp(40px,5vw,64px);
   font-weight:800;
+  line-height:1.1;
 }
 
-.hero h1 span{
-  color:var(--primary);
+.highlight{
+  background:linear-gradient(135deg,var(--primary),#e6d3a3);
+  color:#000;
+  padding:4px 10px;
+  border-radius:10px;
 }
 
 .hero p{
-  margin-top:16px;
+  margin-top:20px;
   max-width:520px;
   color:var(--text-muted);
+  font-size:16px;
 }
 
 /* Buttons */
-.buttons{
+.hero-buttons{
   margin-top:30px;
   display:flex;
   gap:16px;
-  flex-wrap:wrap;
 }
 
 .btn{
@@ -148,8 +161,6 @@ header{
   border:1px solid var(--border);
   background:var(--glass);
   backdrop-filter:blur(12px);
-  cursor:pointer;
-  transition:0.3s;
 }
 
 .btn.primary{
@@ -158,93 +169,62 @@ header{
   border:none;
 }
 
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* ================= SECTIONS ================= */
-section{
-  max-width:1200px;
-  margin:auto;
-  padding:100px 20px;
-}
-
-section h2{
-  font-size:36px;
-  margin-bottom:40px;
-}
-
-section h2 span{
-  color:var(--primary);
-}
-
-/* ================= PORTFOLIO ================= */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-}
-
-.card{
-  background:var(--glass);
-  backdrop-filter:blur(14px);
+/* ================= IMAGE CARD ================= */
+.image-card{
+  background:linear-gradient(135deg,#1b1b1b,#0e0e0e);
   border:1px solid var(--border);
-  border-radius:22px;
-  overflow:hidden;
-  transition:0.3s;
+  border-radius:28px;
+  padding:14px;
+  position:relative;
 }
 
-.card:hover{
-  transform:translateY(-6px);
+/* Status badge */
+.status{
+  position:absolute;
+  top:18px;
+  right:18px;
+  background:rgba(0,0,0,0.6);
+  border:1px solid var(--border);
+  backdrop-filter:blur(10px);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
 }
 
-.card img{
+.status span{
+  color:#22c55e;
+  margin-right:6px;
+}
+
+/* IMAGE PLACEHOLDER */
+.image-placeholder{
   width:100%;
-  height:180px;
-  object-fit:cover;
-}
-
-.card div{
-  padding:16px;
-  font-weight:600;
-}
-
-/* ================= SHOWREEL ================= */
-.video{
-  border-radius:24px;
+  height:460px;
+  border-radius:20px;
   overflow:hidden;
-  border:1px solid var(--border);
-}
-
-iframe{
-  width:100%;
-  height:420px;
-  border:none;
-}
-
-/* ================= SERVICES ================= */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-}
-
-.service{
-  padding:30px;
-  border-radius:24px;
-  background:var(--glass);
-  border:1px solid var(--border);
-  backdrop-filter:blur(14px);
-}
-
-/* ================= FOOTER ================= */
-footer{
-  border-top:1px solid var(--border);
-  text-align:center;
-  padding:40px 20px;
+  background:#222;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   color:var(--text-muted);
   font-size:14px;
+}
+
+/*
+  👉 YAHAN APNA IMAGE LAGANA
+  Replace background-image URL below
+*/
+.image-placeholder{
+  background-image:url("YOUR_IMAGE_URL_HERE");
+  background-size:cover;
+  background-position:center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -254,68 +234,58 @@ footer{
 <!-- NAVBAR -->
 <header>
   <div class="navbar">
-    <div class="brand">
-      <div class="brand-name">
-        Dark <span class="brand-x">X</span> India
-      </div>
-      <div class="brand-studios">STUDIOS</div>
+    <div class="logo">
+      <strong>Dark</strong> <span class="x">X</span> <strong>India</strong>
     </div>
-    <div class="nav-links">
+
+    <div class="nav-center">
       <a href="#">Home</a>
-      <a href="#portfolio">Catalogue</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <a href="#">Services</a>
+      <a href="#">Work</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </div>
+
+    <a href="#" class="cta">Start Project ↗</a>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <h1>Creative Video Editor<br><span>& Filmmaker</span></h1>
-    <p>Transforming vision into cinematic visual stories for brands, creators and businesses worldwide.</p>
-    <div class="buttons">
-      <a href="#portfolio" class="btn primary">View My Work</a>
-      <a href="#showreel" class="btn">Watch Showreel</a>
+  <div class="hero-inner">
+
+    <!-- LEFT -->
+    <div>
+      <div class="tag">● Video Editing Studio</div>
+
+      <h1>
+        Founder-led<br>
+        <span class="highlight">video editing.</span><br>
+        Brand-level execution.
+      </h1>
+
+      <p>
+        Dark X India is a solo-run video editing studio helping brands,
+        creators and businesses grow through cinematic storytelling
+        and high-impact visuals.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn primary">View My Work</a>
+        <a href="#" class="btn">Watch Showreel</a>
+      </div>
     </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="image-card">
+      <div class="status"><span>●</span>Available for work</div>
+      <div class="image-placeholder">
+        Your Image Goes Here
+      </div>
+    </div>
+
   </div>
 </section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <h2>Featured <span>Projects</span></h2>
-  <div class="grid">
-    <div class="card"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"><div>Music Video</div></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"><div>Travel Film</div></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"><div>Commercial</div></div>
-    <div class="card"><img src="https://images.unsplash.com/photo-1515165562835-c4cbe08e18ea"><div>Short Film</div></div>
-  </div>
-</section>
-
-<!-- SHOWREEL -->
-<section id="showreel">
-  <h2>Showreel</h2>
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <h2>Services <span>I Offer</span></h2>
-  <div class="services">
-    <div class="service">🎬 Video Editing & Post Production</div>
-    <div class="service">🎨 Color Grading</div>
-    <div class="service">⚡ Short-form Reels & Ads</div>
-    <div class="service">✨ Motion Graphics & VFX</div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer id="contact">
-© 2026 Dark India Studios — Crafted in India 🇮🇳
-</footer>
 
 </body>
 </html>
-
