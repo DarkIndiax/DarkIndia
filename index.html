@@ -13,27 +13,22 @@
 :root{
   --bg-dark:#080706;
   --primary:#c2a26a;
-  --glass:rgba(255,255,255,0.06);
-  --border:rgba(255,255,255,0.12);
+  --glass:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,0.14);
   --text-muted:rgba(255,255,255,0.7);
   --red:#a81f1f;
 }
 
 /* ================= RESET ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   font-family:'Inter',sans-serif;
   background:var(--bg-dark);
   color:#fff;
   line-height:1.6;
 }
-
-a{color:inherit;text-decoration:none}
+a{text-decoration:none;color:inherit}
 
 /* ================= NAVBAR ================= */
 header{
@@ -41,11 +36,10 @@ header{
   top:0;
   width:100%;
   z-index:100;
-  background:rgba(8,7,6,0.85);
-  backdrop-filter:blur(16px);
+  background:rgba(8,7,6,0.8);
+  backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
 }
-
 .navbar{
   max-width:1200px;
   margin:auto;
@@ -56,175 +50,175 @@ header{
 }
 
 /* Logo */
-.logo{
-  font-size:20px;
-}
+.logo strong{font-weight:800}
+.logo{font-size:20px}
+.logo .x{color:var(--red);font-style:italic;font-weight:400}
 
-.logo strong{
-  font-weight:800;
-}
-
-.logo .x{
-  color:var(--red);
-  font-style:italic;
-  font-weight:400;
-}
-
-/* Nav pill */
+/* Center nav glass */
 .nav-center{
   background:var(--glass);
   border:1px solid var(--border);
-  backdrop-filter:blur(14px);
-  padding:10px 22px;
+  backdrop-filter:blur(16px);
+  padding:10px 24px;
   border-radius:40px;
 }
-
 .nav-center a{
   margin:0 12px;
   font-size:14px;
   opacity:0.85;
 }
-
 .nav-center a:hover{opacity:1}
 
 /* CTA */
 .cta{
-  background:linear-gradient(135deg,var(--primary),#e6d3a3);
-  color:#000;
+  background:var(--glass);
+  border:1px solid var(--border);
+  backdrop-filter:blur(16px);
   padding:10px 18px;
   border-radius:999px;
   font-size:14px;
   font-weight:600;
 }
+.cta:hover{
+  background:linear-gradient(135deg,var(--primary),#e6d3a3);
+  color:#000;
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding:120px 20px;
+}
+.container{
+  max-width:1200px;
+  margin:auto;
+}
 
 /* ================= HERO ================= */
-.hero{
+#home{
   min-height:100vh;
-  padding-top:110px;
+  padding-top:140px;
   display:flex;
   align-items:center;
 }
-
-.hero-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:40px 20px;
+.hero-grid{
   display:grid;
   grid-template-columns:1.1fr .9fr;
   gap:60px;
 }
-
-/* Left content */
 .tag{
   display:inline-block;
   padding:6px 14px;
   background:var(--glass);
   border:1px solid var(--border);
-  border-radius:20px;
+  border-radius:999px;
   font-size:12px;
   color:var(--primary);
   margin-bottom:20px;
 }
-
 .hero h1{
   font-size:clamp(40px,5vw,64px);
   font-weight:800;
   line-height:1.1;
 }
-
 .highlight{
   background:linear-gradient(135deg,var(--primary),#e6d3a3);
   color:#000;
   padding:4px 10px;
   border-radius:10px;
 }
-
 .hero p{
   margin-top:20px;
   max-width:520px;
   color:var(--text-muted);
-  font-size:16px;
 }
-
-/* Buttons */
-.hero-buttons{
+.buttons{
   margin-top:30px;
   display:flex;
   gap:16px;
 }
-
 .btn{
   padding:14px 22px;
   border-radius:14px;
   font-size:14px;
   font-weight:600;
-  border:1px solid var(--border);
   background:var(--glass);
-  backdrop-filter:blur(12px);
+  border:1px solid var(--border);
+  backdrop-filter:blur(14px);
 }
-
 .btn.primary{
-  background:var(--primary);
+  background:linear-gradient(135deg,var(--primary),#e6d3a3);
   color:#000;
   border:none;
 }
 
 /* ================= IMAGE CARD ================= */
 .image-card{
-  background:linear-gradient(135deg,#1b1b1b,#0e0e0e);
-  border:1px solid var(--border);
+  background:linear-gradient(135deg,#1a1a1a,#0e0e0e);
   border-radius:28px;
+  border:1px solid var(--border);
   padding:14px;
   position:relative;
 }
-
-/* Status badge */
 .status{
   position:absolute;
   top:18px;
   right:18px;
-  background:rgba(0,0,0,0.6);
+  background:var(--glass);
   border:1px solid var(--border);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(14px);
   padding:6px 12px;
   border-radius:999px;
   font-size:12px;
 }
-
-.status span{
-  color:#22c55e;
-  margin-right:6px;
-}
-
-/* IMAGE PLACEHOLDER */
+.status span{color:#22c55e;margin-right:6px}
 .image-placeholder{
-  width:100%;
   height:460px;
   border-radius:20px;
-  overflow:hidden;
   background:#222;
   display:flex;
   align-items:center;
   justify-content:center;
   color:var(--text-muted);
-  font-size:14px;
 }
-
-/*
-  👉 YAHAN APNA IMAGE LAGANA
-  Replace background-image URL below
-*/
+/* REPLACE IMAGE HERE */
 .image-placeholder{
   background-image:url("YOUR_IMAGE_URL_HERE");
   background-size:cover;
   background-position:center;
 }
 
+/* ================= SERVICES ================= */
+#services h2,
+#work h2,
+#about h2,
+#contact h2{
+  font-size:36px;
+  margin-bottom:40px;
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+.service{
+  padding:30px;
+  border-radius:24px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  backdrop-filter:blur(14px);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  padding:40px 20px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:var(--text-muted);
+}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:900px){
-  .hero-inner{
-    grid-template-columns:1fr;
-  }
+  .hero-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -239,53 +233,86 @@ header{
     </div>
 
     <div class="nav-center">
-      <a href="#">Home</a>
-      <a href="#">Services</a>
-      <a href="#">Work</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
 
-    <a href="#" class="cta">Start Project ↗</a>
+    <a href="#contact" class="cta">Start Project ↗</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-
-    <!-- LEFT -->
-    <div>
+<!-- HOME -->
+<section id="home">
+  <div class="container hero-grid">
+    <div class="hero">
       <div class="tag">● Video Editing Studio</div>
-
       <h1>
         Founder-led<br>
         <span class="highlight">video editing.</span><br>
         Brand-level execution.
       </h1>
-
       <p>
         Dark X India is a solo-run video editing studio helping brands,
-        creators and businesses grow through cinematic storytelling
-        and high-impact visuals.
+        creators and businesses grow through cinematic storytelling.
       </p>
-
-      <div class="hero-buttons">
-        <a href="#" class="btn primary">View My Work</a>
-        <a href="#" class="btn">Watch Showreel</a>
+      <div class="buttons">
+        <a href="#work" class="btn primary">View My Work</a>
+        <a href="#contact" class="btn">Watch Showreel</a>
       </div>
     </div>
 
-    <!-- RIGHT IMAGE -->
     <div class="image-card">
       <div class="status"><span>●</span>Available for work</div>
-      <div class="image-placeholder">
-        Your Image Goes Here
-      </div>
+      <div class="image-placeholder">Your Image Here</div>
     </div>
-
   </div>
 </section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service">🎬 Video Editing</div>
+      <div class="service">🎨 Color Grading</div>
+      <div class="service">⚡ Short-form Ads</div>
+      <div class="service">✨ Motion Graphics</div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="container">
+    <h2>Work</h2>
+    <p class="text-muted">Portfolio section goes here.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2>About</h2>
+    <p class="text-muted">
+      Founder-led editing studio focused on brand-level execution and clarity.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="text-muted">Let’s build something cinematic.</p>
+  </div>
+</section>
+
+<footer>
+© 2026 Dark X India — Crafted in India 🇮🇳
+</footer>
 
 </body>
 </html>
