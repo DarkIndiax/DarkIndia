@@ -2,24 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dark X India | Video Editing Portfolio</title>
+<title>Dark India Studios | Video Editor Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-/* ================= THEME (NEW PALETTE) ================= */
+/* ================= THEME (FROM REFERENCE) ================= */
 :root{
   --bg:#050507;
-  --panel:#0b0b10;
-  --glass:rgba(255,255,255,0.08);
+  --panel:#0b0b12;
+  --glass:rgba(255,255,255,0.07);
   --border:rgba(255,255,255,0.15);
-
-  /* PURPLE → PINK GRADIENT */
   --grad:linear-gradient(135deg,#7c3aed,#ec4899);
   --purple:#7c3aed;
   --pink:#ec4899;
-
   --text-muted:rgba(255,255,255,0.65);
   --red:#ef4444;
 }
@@ -28,7 +25,7 @@
 html{scroll-behavior:smooth}
 body{
   font-family:'Inter',sans-serif;
-  background:radial-gradient(circle at top,#0f0f1a,#050507 55%);
+  background:radial-gradient(circle at top,#0f1020,#050507 60%);
   color:#fff;
   line-height:1.6;
 }
@@ -39,7 +36,7 @@ header{
   position:fixed;
   top:0;
   width:100%;
-  z-index:100;
+  z-index:999;
   background:rgba(5,5,7,0.8);
   backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
@@ -52,30 +49,19 @@ header{
   align-items:center;
   justify-content:space-between;
 }
-
-/* Logo */
 .logo strong{font-weight:800}
 .logo .x{color:var(--red);font-style:italic;font-weight:400}
-
-/* Nav pill */
 .nav-pill{
   background:var(--glass);
   border:1px solid var(--border);
-  backdrop-filter:blur(16px);
-  padding:10px 24px;
+  padding:10px 22px;
   border-radius:40px;
+  backdrop-filter:blur(16px);
 }
-.nav-pill a{
-  margin:0 12px;
-  font-size:14px;
-  opacity:.85;
-}
+.nav-pill a{margin:0 12px;font-size:14px;opacity:.85}
 .nav-pill a:hover{opacity:1}
-
-/* CTA */
 .cta{
   background:var(--grad);
-  color:#fff;
   padding:10px 18px;
   border-radius:999px;
   font-size:14px;
@@ -83,34 +69,28 @@ header{
 }
 
 /* ================= SECTIONS ================= */
-section{padding:130px 20px}
+section{padding:140px 20px}
 .container{max-width:1200px;margin:auto}
 
 /* ================= HERO ================= */
-#home{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-}
+#home{min-height:100vh;display:flex;align-items:center}
 .hero-grid{
   display:grid;
-  grid-template-columns:1.2fr .8fr;
+  grid-template-columns:1.1fr .9fr;
   gap:60px;
 }
 .badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
+  display:inline-block;
   padding:6px 14px;
-  border-radius:999px;
   background:var(--glass);
   border:1px solid var(--border);
+  border-radius:999px;
   font-size:12px;
   color:var(--purple);
   margin-bottom:20px;
 }
 h1{
-  font-size:clamp(42px,5.5vw,68px);
+  font-size:clamp(44px,5.5vw,70px);
   font-weight:800;
   line-height:1.1;
 }
@@ -125,11 +105,7 @@ p.lead{
   max-width:520px;
   color:var(--text-muted);
 }
-.actions{
-  margin-top:30px;
-  display:flex;
-  gap:16px;
-}
+.actions{margin-top:30px;display:flex;gap:16px}
 .btn{
   padding:14px 22px;
   border-radius:14px;
@@ -139,34 +115,31 @@ p.lead{
   border:1px solid var(--border);
   backdrop-filter:blur(14px);
 }
-.btn.primary{
-  background:var(--grad);
-  border:none;
-}
+.btn.primary{background:var(--grad);border:none}
 
-/* ================= IMAGE PANEL ================= */
-.image-panel{
-  background:linear-gradient(135deg,#141428,#0a0a14);
-  border:1px solid var(--border);
+/* ================= IMAGE ================= */
+.image-card{
+  background:linear-gradient(135deg,#121229,#090913);
   border-radius:28px;
   padding:14px;
+  border:1px solid var(--border);
   position:relative;
 }
 .status{
   position:absolute;
   top:18px;
   right:18px;
+  font-size:12px;
   padding:6px 12px;
   border-radius:999px;
   background:var(--glass);
   border:1px solid var(--border);
-  font-size:12px;
 }
 .status span{color:#22c55e;margin-right:6px}
 .image-box{
   height:460px;
   border-radius:20px;
-  background:#101018;
+  background:#0f0f18;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -179,12 +152,20 @@ p.lead{
   background-position:center;
 }
 
-/* ================= SERVICES ================= */
-h2{
-  font-size:38px;
-  font-weight:800;
-  margin-bottom:40px;
+/* ================= SKILL STRIP ================= */
+.strip{
+  background:var(--grad);
+  padding:14px 20px;
+  display:flex;
+  gap:24px;
+  justify-content:center;
+  font-size:14px;
+  font-weight:600;
+  color:#000;
 }
+
+/* ================= CARDS ================= */
+h2{font-size:38px;font-weight:800;margin-bottom:40px}
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -212,21 +193,18 @@ h2{
 }
 .video-thumb{
   height:180px;
-  background:#0e0e1a;
+  background:#111;
 }
-/* 👉 PUT VIDEO THUMB IMAGE */
+/* 👉 VIDEO THUMB */
 .video-thumb{
   background-image:url("VIDEO_THUMB_URL");
   background-size:cover;
   background-position:center;
 }
-.video-info{
-  padding:16px;
-}
+.video-info{padding:16px}
 .video-info a{
-  display:inline-block;
   margin-top:10px;
-  font-size:14px;
+  display:inline-block;
   background:var(--grad);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -245,19 +223,14 @@ form input,form textarea{
   padding:14px;
   color:#fff;
 }
-form textarea{
-  grid-column:1/-1;
-  height:120px;
-}
-form button{
-  grid-column:1/-1;
-}
+form textarea{grid-column:1/-1;height:120px}
+form button{grid-column:1/-1}
 
 /* ================= FOOTER ================= */
 footer{
-  padding:40px 20px;
   border-top:1px solid var(--border);
   text-align:center;
+  padding:40px 20px;
   color:var(--text-muted);
 }
 
@@ -271,74 +244,67 @@ footer{
 
 <body>
 
-<!-- NAV -->
 <header>
   <div class="nav">
     <div class="logo">
       <strong>Dark</strong> <span class="x">X</span> <strong>India</strong>
     </div>
-
     <div class="nav-pill">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
-      <a href="#work">Catalog</a>
+      <a href="#work">Portfolio</a>
       <a href="#contact">Contact</a>
     </div>
-
     <a href="#contact" class="cta">Start Project ↗</a>
   </div>
 </header>
 
-<!-- HERO -->
 <section id="home">
   <div class="container hero-grid">
     <div>
       <div class="badge">● Video Editing Studio</div>
-      <h1>
-        Founder-led<br>
-        <span class="highlight">video editing.</span><br>
-        Brand-level execution.
-      </h1>
+      <h1>Hello! We’re<br><span class="highlight">Dark India Studios</span></h1>
       <p class="lead">
-        Dark X India is a professional video editing studio helping creators,
-        startups and brands grow with cinematic content.
+        Founder-led video editing studio crafting cinematic,
+        high-impact visuals for brands, creators & businesses.
       </p>
       <div class="actions">
-        <a href="#work" class="btn primary">View Work</a>
-        <a href="#contact" class="btn">Contact Me</a>
+        <a href="#work" class="btn primary">View Portfolio</a>
+        <a href="#contact" class="btn">Let’s Talk</a>
       </div>
     </div>
-
-    <div class="image-panel">
+    <div class="image-card">
       <div class="status"><span>●</span>Available for work</div>
       <div class="image-box">Your Image Here</div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<div class="strip">
+  Video Editing • Reels & Shorts • Ads • Films • Color Grading • Motion Graphics
+</div>
+
 <section id="services">
   <div class="container">
-    <h2>What I Offer</h2>
+    <h2>What We Offer</h2>
     <div class="grid">
-      <div class="card">🎬 Long & Short Form Editing</div>
+      <div class="card">🎬 Professional Video Editing</div>
       <div class="card">🎨 Cinematic Color Grading</div>
-      <div class="card">⚡ Reels, Ads & YouTube</div>
+      <div class="card">⚡ Shorts, Ads & YouTube Content</div>
       <div class="card">✨ Motion Graphics & Sound Design</div>
     </div>
   </div>
 </section>
 
-<!-- CATALOG -->
 <section id="work">
   <div class="container">
-    <h2>Video Catalog</h2>
+    <h2>Video Portfolio</h2>
     <div class="video-grid">
 
       <div class="video-card">
         <div class="video-thumb"></div>
         <div class="video-info">
-          <strong>Brand Promo Video</strong><br>
+          <strong>Brand Promo Film</strong><br>
           <a href="YOUR_VIDEO_LINK" target="_blank">Watch Video ↗</a>
         </div>
       </div>
@@ -349,21 +315,20 @@ footer{
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <h2>Say Hi 👋</h2>
     <form>
       <input placeholder="Your Name">
       <input placeholder="Email">
-      <textarea placeholder="Tell me about your project"></textarea>
+      <textarea placeholder="Tell us about your project"></textarea>
       <button class="btn primary">Send Message</button>
     </form>
   </div>
 </section>
 
 <footer>
-© 2026 Dark X India — Crafted in India 🇮🇳
+© 2026 Dark India Studios — Crafted in India 🇮🇳
 </footer>
 
 </body>
