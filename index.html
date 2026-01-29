@@ -1,214 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dark India Studios — Video Editing Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Dark India Studios | Video Editing Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <h1 style="font-size:22px;letter-spacing:0.25px;color:#ffffff">
-  <strong>Dark</strong><span style="color:#a81f1f;font-style:italic;font-weight:400;">X</span> <strong>India</strong>
-</h1>
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ================= ROOT ================= */
+:root{
+  --bg-dark:#080706;
+  --primary:#c2a26a;
+  --glass:rgba(255,255,255,0.06);
+  --border:rgba(255,255,255,0.12);
+  --text-muted:rgba(255,255,255,0.7);
+  --red:#a81f1f;
+}
 
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-dark);
+  color:#ffffff;
+  line-height:1.6;
+}
 
-    /* ---------- NAVBAR ---------- */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(8,7,6,0.75);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* ================= NAVBAR ================= */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  background:rgba(8,7,6,0.85);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
 
-    .logo {
-      font-weight: 800;
-      font-size: 20px;
-      background: linear-gradient(90deg, var(--primary), var(--primary-soft));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .nav a {
-      margin-left: 20px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
+/* Brand */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .nav a:hover {
-      opacity: 1;
-    }
+.brand-name{
+  font-size:20px;
+  font-weight:800;
+  color:var(--primary);
+}
 
-    /* ---------- HERO ---------- */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.7), var(--bg-dark)),
-        url("https://images.unsplash.com/photo-1545235617-9465d2a55698") center/cover;
-    }
+.brand-x{
+  color:var(--red);
+  font-style:italic;
+  margin:0 2px;
+}
 
-    .hero-content {
-      max-width: 1200px;
-      padding: 40px;
-      margin: auto;
-    }
+.brand-studios{
+  font-size:12px;
+  font-weight:600;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:8px;
+  background:rgba(194,162,106,0.18);
+  border:1px solid rgba(194,162,106,0.45);
+  backdrop-filter:blur(10px);
+  letter-spacing:1px;
+}
 
-    .hero h1 {
-      font-size: clamp(36px, 5vw, 56px);
-      font-weight: 800;
-    }
+/* Nav links */
+.nav-links a{
+  margin-left:24px;
+  font-size:14px;
+  opacity:0.8;
+}
 
-    .hero span {
-      color: var(--primary);
-    }
+.nav-links a:hover{
+  opacity:1;
+}
 
-    .hero p {
-      margin-top: 16px;
-      max-width: 520px;
-      color: var(--text-muted);
-    }
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  padding-top:90px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,0.7),var(--bg-dark)),
+    url("https://images.unsplash.com/photo-1545235617-9465d2a55698") center/cover;
+}
 
-    .buttons {
-      margin-top: 30px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+.hero-content{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-    .btn {
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-size: 14px;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      backdrop-filter: blur(14px);
-      background: var(--glass);
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.hero h1{
+  font-size:clamp(38px,5vw,58px);
+  font-weight:800;
+}
 
-    .btn.primary {
-      background: var(--primary);
-      color: #000;
-      border: none;
-    }
+.hero h1 span{
+  color:var(--primary);
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
+.hero p{
+  margin-top:16px;
+  max-width:520px;
+  color:var(--text-muted);
+}
 
-    /* ---------- SECTIONS ---------- */
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 100px 20px;
-    }
+/* Buttons */
+.buttons{
+  margin-top:30px;
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
 
-    section h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
+.btn{
+  padding:14px 22px;
+  border-radius:14px;
+  font-size:14px;
+  font-weight:600;
+  border:1px solid var(--border);
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  cursor:pointer;
+  transition:0.3s;
+}
 
-    section h2 span {
-      color: var(--primary);
-    }
+.btn.primary{
+  background:var(--primary);
+  color:#000;
+  border:none;
+}
 
-    /* ---------- PORTFOLIO ---------- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
 
-    .card {
-      background: var(--glass);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
+/* ================= SECTIONS ================= */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:100px 20px;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-    }
+section h2{
+  font-size:36px;
+  margin-bottom:40px;
+}
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+section h2 span{
+  color:var(--primary);
+}
 
-    .card div {
-      padding: 16px;
-      font-weight: 600;
-    }
+/* ================= PORTFOLIO ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
 
-    /* ---------- SHOWREEL ---------- */
-    .video {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(14px);
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  transition:0.3s;
+}
 
-    iframe {
-      width: 100%;
-      height: 420px;
-      border: none;
-    }
+.card:hover{
+  transform:translateY(-6px);
+}
 
-    /* ---------- SERVICES ---------- */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-      gap: 24px;
-    }
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
 
-    .service {
-      padding: 30px;
-      border-radius: 24px;
-      background: var(--glass);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
-    }
+.card div{
+  padding:16px;
+  font-weight:600;
+}
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-  </style>
+/* ================= SHOWREEL ================= */
+.video{
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+
+iframe{
+  width:100%;
+  height:420px;
+  border:none;
+}
+
+/* ================= SERVICES ================= */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.service{
+  padding:30px;
+  border-radius:24px;
+  background:var(--glass);
+  border:1px solid var(--border);
+  backdrop-filter:blur(14px);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:40px 20px;
+  color:var(--text-muted);
+  font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <header>
-  <div class="nav">
-    <div class="logo">Dark India Studios</div>
-    <div>
-      <a href="#home">Home</a> 
-      <a href="#catalouge">Catalouge</a>
+  <div class="navbar">
+    <div class="brand">
+      <div class="brand-name">
+        Dark <span class="brand-x">X</span> India
+      </div>
+      <div class="brand-studios">STUDIOS</div>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#portfolio">Catalogue</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
@@ -218,15 +272,8 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>
-      Creative Video Editor <br />
-      <span>& Filmmaker</span>
-    </h1>
-    <p>
-      Transforming vision into cinematic visual stories for brands,
-      creators and businesses worldwide.
-    </p>
-
+    <h1>Creative Video Editor<br><span>& Filmmaker</span></h1>
+    <p>Transforming vision into cinematic visual stories for brands, creators and businesses worldwide.</p>
     <div class="buttons">
       <a href="#portfolio" class="btn primary">View My Work</a>
       <a href="#showreel" class="btn">Watch Showreel</a>
@@ -237,24 +284,11 @@
 <!-- PORTFOLIO -->
 <section id="portfolio">
   <h2>Featured <span>Projects</span></h2>
-
   <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
-      <div>Music Video</div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-      <div>Travel Film</div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
-      <div>Commercial</div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1515165562835-c4cbe08e18ea">
-      <div>Short Film</div>
-    </div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"><div>Music Video</div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"><div>Travel Film</div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f"><div>Commercial</div></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1515165562835-c4cbe08e18ea"><div>Short Film</div></div>
   </div>
 </section>
 
@@ -269,23 +303,19 @@
 <!-- SERVICES -->
 <section id="services">
   <h2>Services <span>I Offer</span></h2>
-
   <div class="services">
     <div class="service">🎬 Video Editing & Post Production</div>
     <div class="service">🎨 Color Grading</div>
-    <div class="service">⚡ Short-Form Reels & Ads</div>
+    <div class="service">⚡ Short-form Reels & Ads</div>
     <div class="service">✨ Motion Graphics & VFX</div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer id="contact">
-  © 2026 Dark India Studios — Crafted in India 🇮🇳
+© 2026 Dark India Studios — Crafted in India 🇮🇳
 </footer>
-
-<script>
-  lucide.createIcons();
-</script>
 
 </body>
 </html>
+
