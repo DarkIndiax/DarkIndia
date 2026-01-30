@@ -8,20 +8,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- ROOT ---------- */
+/* ================= ROOT ================= */
 :root {
-  --bg: #0f1225;
-  --panel: rgba(255, 255, 255, 0.10);
-  --panel-strong: rgba(255, 255, 255, 0.16);
-  --text: #f5f5f5;
-  --muted: #9ca3af;
+  --bg-main: #0b0e1a;
+
+  /* Apple-style dark glass */
+  --panel: rgba(15, 18, 45, 0.55);
+  --panel-strong: rgba(20, 24, 60, 0.7);
+
+  --text: #f5f7fb;
+  --muted: #b2b8c6;
   --accent: #e63946;
-  --border: rgba(255, 255, 255, 0.25);
+
+  --border: rgba(255,255,255,0.14);
   --radius: 18px;
-  --blur: blur(18px);
+  --blur: blur(20px);
 }
 
-/* ---------- BASE ---------- */
+/* ================= BASE ================= */
 * {
   margin: 0;
   padding: 0;
@@ -32,11 +36,14 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: radial-gradient(circle at top, #1c1f3a, var(--bg));
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(90,140,255,0.16), transparent 60%),
+    radial-gradient(900px 500px at 80% 20%, rgba(0,180,255,0.08), transparent 55%),
+    linear-gradient(180deg, #0e1125, #090b16);
   color: var(--text);
 }
 
-/* ---------- NAV ---------- */
+/* ================= NAV ================= */
 nav {
   position: fixed;
   top: 0;
@@ -46,7 +53,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 
-  background: rgba(255,255,255,0.08);
+  background: rgba(15,18,40,0.55);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
 
@@ -85,13 +92,13 @@ nav li:hover { color: var(--text); }
   cursor: pointer;
 }
 
-/* ---------- SECTIONS ---------- */
+/* ================= COMMON ================= */
 section { padding: 120px 8%; }
 
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease;
+  transform: translateY(22px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .reveal.show {
@@ -104,7 +111,7 @@ section { padding: 120px 8%; }
   font-size: 14px;
 }
 
-/* ---------- HERO ---------- */
+/* ================= HERO ================= */
 .hero {
   min-height: 100vh;
   display: grid;
@@ -136,24 +143,27 @@ section { padding: 120px 8%; }
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.35s ease;
 }
+
+/* primary */
 .btn-primary {
   background: var(--accent);
   color: white;
   border: 2px solid var(--accent);
-  transition: all 0.35s ease;
 }
 
 .btn-primary:hover {
   background: transparent;
   color: var(--accent);
 }
+
+/* secondary */
 .btn-secondary {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
   color: var(--text);
-  border: 2px solid rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.22);
   backdrop-filter: blur(12px);
-  transition: all 0.35s ease;
 }
 
 .btn-secondary:hover {
@@ -162,13 +172,7 @@ section { padding: 120px 8%; }
   border-color: white;
 }
 
-.btn-primary { background: var(--accent); }
-.btn-secondary {
-  border: 1px solid var(--border);
-  color: var(--muted);
-}
-
-/* ---------- PIPELINE ---------- */
+/* ================= PIPELINE ================= */
 .pipeline {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -183,15 +187,22 @@ section { padding: 120px 8%; }
 
 .step {
   padding: 26px;
-  background: var(--panel);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+    var(--panel);
+
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
 
   border-radius: var(--radius);
   border: 1px solid var(--border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 30px 60px rgba(0,0,0,0.45);
 }
 
-/* ---------- WORK ---------- */
+/* ================= WORK ================= */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -199,43 +210,53 @@ section { padding: 120px 8%; }
 }
 
 .work-card {
-  background: var(--panel);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+    var(--panel);
+
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
 
   border-radius: var(--radius);
-  overflow: hidden;
   border: 1px solid var(--border);
-  transition: all 0.35s ease;
+  overflow: hidden;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 30px 60px rgba(0,0,0,0.45);
+
+  transition: transform 0.35s ease;
 }
 
 .work-card:hover {
   transform: translateY(-6px);
-  background: var(--panel-strong);
 }
 
 .work-thumb {
   height: 180px;
   background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.25),
-      rgba(255,255,255,0.05)
-    ),
-    linear-gradient(135deg, #000, #111);
+    radial-gradient(600px 300px at 30% 20%, rgba(255,255,255,0.18), transparent),
+    linear-gradient(135deg, #080b18, #02030a);
 }
 
 .work-info { padding: 22px; }
 
-/* ---------- CONTACT ---------- */
+/* ================= CONTACT ================= */
 .contact-box {
-  background: var(--panel-strong);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02)),
+    var(--panel-strong);
+
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
 
   border-radius: var(--radius);
   padding: 50px;
   border: 1px solid var(--border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 40px 80px rgba(0,0,0,0.5);
 }
 
 form {
@@ -246,18 +267,27 @@ form {
 
 input, textarea {
   padding: 14px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
+  border-radius: 14px;
 
-  border: 1px solid var(--border);
+  background: rgba(12,16,40,0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255,255,255,0.16);
   color: var(--text);
+  transition: 0.25s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(255,255,255,0.32);
+  background: rgba(16,22,55,0.75);
 }
 
 textarea { resize: none; height: 120px; }
 
-/* ---------- FOOTER ---------- */
+/* ================= FOOTER ================= */
 footer {
   padding: 40px;
   text-align: center;
@@ -265,7 +295,7 @@ footer {
   color: var(--muted);
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ================= RESPONSIVE ================= */
 @media(max-width:900px){
   .hero, .pipeline { grid-template-columns: 1fr; }
   nav ul { display: none; }
@@ -303,7 +333,6 @@ footer {
       <h3>Editing Pipeline</h3>
       <p class="small">A focused workflow designed for impact.</p>
     </div>
-
     <div class="pipeline-steps">
       <div class="step reveal"><h4>Raw Footage</h4><p class="small">Understanding tone and emotion.</p></div>
       <div class="step reveal"><h4>Story Cut</h4><p class="small">Structuring what matters.</p></div>
@@ -323,7 +352,6 @@ footer {
         <p class="small">Commercial edit</p>
       </div>
     </div>
-
     <div class="work-card reveal">
       <div class="work-thumb"></div>
       <div class="work-info">
