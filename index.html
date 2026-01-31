@@ -236,6 +236,87 @@ textarea {
       rgba(255,255,255,0.05)
     ),
     linear-gradient(135deg, #000, #111);
+  position: relative;
+  overflow: hidden;
+}
+
+.work-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 18, 37, 0.8) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.work-thumb iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+/* Video thumbnail with play button overlay */
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.video-thumbnail:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.7);
+}
+
+/* MX Player style play button */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.35s ease;
+  z-index: 5;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.play-button::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 0 14px 24px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.95);
+  margin-left: 6px;
+}
+
+.video-thumbnail:hover .play-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.play-button:hover {
+  background: rgba(230, 57, 70, 0.85);
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(230, 57, 70, 0.5);
 }
 
 .work-info { padding: 22px; }
@@ -298,10 +379,10 @@ footer {
   <ul>
     <li onclick="scrollToId('home')">Home</li>
     <li onclick="scrollToId('pipeline')">Pipeline</li>
-    <li onclick="scrollToId('work')">Work</li>
+    <li><a href="portfolio.html" style="text-decoration:none;color:inherit;">Portfolio</a></li>
     <li onclick="scrollToId('contact')">Contact</li>
   </ul>
-  <div class="nav-btn" onclick="scrollToId('contact')">LET’S TALK</div>
+  <div class="nav-btn" onclick="scrollToId('contact')">LET'S TALK</div>
 </nav>
 
 <section id="home" class="hero">
@@ -309,7 +390,7 @@ footer {
     <h1>Crafted in DARKNESS,<br>Delivered with IMPACT.</h1>
     <p>We're open to collaborate with creators, brands, and companies to craft cinematic visuals.</p>
     <div class="hero-actions">
-      <div class="btn btn-primary" onclick="scrollToId('work')">See My Work</div>
+      <a href="portfolio.html" class="btn btn-primary" style="text-decoration:none;">See My Work</a>
       <div class="btn btn-secondary" onclick="scrollToId('contact')">Start a Project</div>
     </div>
   </div>
@@ -335,7 +416,12 @@ footer {
   <h3 class="reveal">Recent Work</h3>
   <div class="work-grid">
     <div class="work-card reveal">
-      <div class="work-thumb"></div>
+      <div class="work-thumb">
+        <div class="video-thumbnail" data-video-id="l6Am2arPu0g" onclick="playVideo(this)">
+          <img src="https://img.youtube.com/vi/l6Am2arPu0g/maxresdefault.jpg" alt="High-energy car sequence thumbnail" loading="lazy">
+          <div class="play-button"></div>
+        </div>
+      </div>
       <div class="work-info">
         <strong>High-energy car sequence</strong>
         <p class="small">Commercial edit</p>
@@ -349,6 +435,9 @@ footer {
         <p class="small">Brand film</p>
       </div>
     </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="portfolio.html" class="btn btn-secondary" style="text-decoration:none;display:inline-block;">View All Work</a>
   </div>
 </section>
 
@@ -379,6 +468,22 @@ const observer = new IntersectionObserver(entries=>{
 },{threshold:0.15});
 
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Video playback - replaces thumbnail with YouTube embed on click
+function playVideo(element) {
+  const videoId = element.dataset.videoId;
+  const workThumb = element.parentElement;
+
+  // Create iframe element
+  const iframe = document.createElement('iframe');
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+
+  // Replace thumbnail with iframe
+  workThumb.innerHTML = '';
+  workThumb.appendChild(iframe);
+}
 </script>
 
 </body>
